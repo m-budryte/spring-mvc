@@ -11,7 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-    <p>message = ${message}</p>
-    <p>message1 = ${message1}</p>
+    <%
+        for (int i = 0; i < 10; i++) {
+            out.println(i);%> <br /><%
+            out.println("Your ip address is " + request.getRemoteAddr());%> <br /><%
+            out.println("Your port " + request.getLocalPort());%> <br /><%
+        }
+    %>
 </body>
 </html>

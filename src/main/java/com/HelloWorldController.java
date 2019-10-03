@@ -13,7 +13,6 @@ public class HelloWorldController {
 
         modelAndView.setViewName("view");
         modelAndView.addObject("message", "Hello, World!");
-        modelAndView.addObject("message1", "Hello, Sky!");
 
         return modelAndView;
     }
