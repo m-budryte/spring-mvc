@@ -3,17 +3,19 @@ package com;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Map;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloWorldController {
     @RequestMapping("/helloWorld")
-    public String getHelloWorld(ModelMap modelMap) {
-        modelMap.addAttribute("message", "Hi");
-        modelMap.addAttribute("message1", "goodbye");
+    public ModelAndView getHelloWorld() {
+        ModelAndView modelAndView = new ModelAndView();
 
-        return "view";
+        modelAndView.setViewName("view");
+        modelAndView.addObject("message", "Hello, World!");
+        modelAndView.addObject("message1", "Hello, Sky!");
+
+        return modelAndView;
     }
 
 }
