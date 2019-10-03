@@ -4,7 +4,9 @@
     <title>Title</title>
 </head>
 <body>
-    <%! int a = 0; %>
-    <% out.println(a); %>
-    </body>
+<jsp:declaration>
+    int a = 40;
+</jsp:declaration>
+<% out.println(a);%>
+</body>
 </html>
