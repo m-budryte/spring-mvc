@@ -10,12 +10,12 @@ import java.util.List;
 
 @Controller
 public class HelloWorldController {
-    @RequestMapping(value="/getNames")
+    @RequestMapping(value="/getNumbers")
     public ModelAndView getNames(ModelAndView modelAndView) {
-        List<String> names = Arrays.asList("bob", "bill", "matt");
+        List<Integer> numbers = Arrays.asList(1, 2, 3);
 
         modelAndView.setViewName("view");
-        modelAndView.addObject("names", names);
+        modelAndView.addObject("numbers", numbers);
 
         return modelAndView;
     }
