@@ -1,7 +1,5 @@
 package com;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -14,10 +12,9 @@ public class HelloWorldController {
     public static List<List<String>> students = Arrays.asList(
             Arrays.asList("masha", "sasha", "pasha"), Arrays.asList("xi", "jin", "pin"), Arrays.asList("john", "andrew", "scott"));
 
-
-    @RequestMapping(value = "/getStudents/{classID}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getStudents", method = RequestMethod.POST )
     @ResponseBody
-    public String getStudents(@PathVariable Integer classID) {
+    public String getStudents(@RequestParam Integer classID) {
         return students.get(classID-1).toString();
     }
 
