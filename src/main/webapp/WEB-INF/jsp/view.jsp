@@ -6,8 +6,11 @@
     <title>Title</title>
 </head>
 <body>
+<%int i = 0; %>
+
    <c:forEach items="${names}" var="name">
-       <h1>${name}</h1>
+       <%i++;%>
+       <h1>Iterating over element <%=i%> <br/> ${name}</h1>
    </c:forEach>
 </body>
 </html>
