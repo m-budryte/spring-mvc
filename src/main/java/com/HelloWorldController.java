@@ -1,5 +1,6 @@
 package com;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ import java.util.List;
 public class HelloWorldController {
 
     public static List<ArrayList<String>> students = new ArrayList<ArrayList<String>>();
+
+    private final Logger logger = Logger.getLogger(HelloWorldController.class);
 
     @RequestMapping(value = "/init")
     @ResponseBody
@@ -26,6 +29,8 @@ public class HelloWorldController {
         h = new ArrayList<String>();
         h.addAll(Arrays.asList("john", "andrew", "scott"));
         students.add(h);
+
+        logger.debug("Initialised our arraylist of classes");
     }
 
     @RequestMapping(value = "/students", method = RequestMethod.POST )
