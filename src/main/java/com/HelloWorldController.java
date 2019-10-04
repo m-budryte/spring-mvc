@@ -41,5 +41,12 @@ public class HelloWorldController {
         System.out.println(students);
     }
 
-
+    @RequestMapping(value = "/update", method = RequestMethod.PUT )
+    @ResponseBody
+    public void updateStudents(@RequestParam Integer classID) {
+        ArrayList<String> list= new ArrayList<String>();
+        list.addAll(Arrays.asList("subject a", "subject b", "subject c"));
+        students.set(classID-1, list);
+        System.out.println(students);
+    }
 }
