@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @RequestMapping(value = "/getHelloWorld")
     public ResponseEntity<String> getHelloWorld() {
-        return new ResponseEntity<String>("Hello, World", HttpStatus.OK);
+        return new ResponseEntity<String>("Hello, World", HttpStatus.FORBIDDEN);
     }
 
 }
